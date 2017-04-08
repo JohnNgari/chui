@@ -4,19 +4,9 @@
 
 <h1>Create Users</h1>
 
- @if(count($errors)>0)
+@include('includes.form-errors')
 
-         <div class="alert alert-danger">
-         <ul>
-             @foreach($errors->all() as $error)
-                 <li>{{$error}}</li>
-             @endforeach
-         </ul>
-         </div>
-
-     @endif
-
-    {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store', 'file'=>true]) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store', 'files'=>true]) !!}
 
 
             <div class="form-group">
@@ -55,8 +45,8 @@
 
             <div class="form-group">
 
-                 {!! Form::label('file', 'Photo:') !!}
-                 {!! Form::file('file', null, ['class'=>'form-control']) !!}
+                 {!! Form::label('photo_id', 'Photo:') !!}
+                 {!! Form::file('photo_id', null, ['class'=>'form-control']) !!}
 
             </div>
 
