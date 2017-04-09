@@ -3,6 +3,18 @@
 
 @section('content')
 
+    @if(Session::has('deleted_user'))
+
+        <p class="btn btn-danger">{{session('deleted_user')}}</p>
+
+    @endif
+
+    @if(Session::has('created_user'))
+
+        <p class="btn btn-success">{{session('created_user')}}</p>
+
+    @endif
+
     <table class="table">
         <thead>
         <tr>
